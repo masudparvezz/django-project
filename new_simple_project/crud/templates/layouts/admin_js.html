@@ -1,0 +1,34 @@
+ {% load static %}
+
+  <script src="{% static 'crud/vendor/jquery/jquery.min.js'  %}"></script>
+  <script src="{% static 'crud/vendor/bootstrap/js/bootstrap.bundle.min.js'  %}"></script>
+  <script src="{% static 'crud/vendor/chart.js/Chart.min.js' %}"></script>
+  <script src="{% static 'crud/js/demo/chart-area-demo.js' %}"></script>
+  <script src="{% static 'crud/js/toastr.js' %}"></script>
+
+  <script type="text/javascript">
+	//=====ConsumerBehaviourChart=======
+        toastr.options = {
+           "closeButton": true,
+		  "debug": false,
+		  "newestOnTop": true,
+		  "progressBar": false,
+		  "positionClass": "toast-top-right",
+		  "preventDuplicates": false,
+		  "onclick": null,
+		  "showDuration": "100",
+		  "hideDuration": "1000",
+		  "timeOut": "10000",
+		  "extendedTimeOut": "20000",
+		  "showEasing": "linear",
+		  "hideEasing": "linear",
+		  "showMethod": "slideDown",
+		  "hideMethod": "slideUp"
+        };
+
+		{% if messages %}
+		{% for message in messages %}
+            toastr['{{ message.level_tag }}']('{{ message }}');
+        {% endfor %}
+        {% endif %}
+    </script>
