@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from crud.models import *
+from crud.models import Category,Product,Size,ProductSize,ProductImage
 
 
 class CategoryForms(ModelForm):
